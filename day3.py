@@ -22,4 +22,4 @@ def run(input_file: str):
 
 if __name__ == "__main__":
   run("test/day3")
-  run("input/day3")
+  run("inputs/day3")
