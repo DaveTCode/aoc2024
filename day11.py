@@ -1,12 +1,9 @@
-from typing import List
+import functools
 
-cache = {}
-
+@functools.cache
 def blink_at_stone(stone: int, blinks_left: int) -> int:
   if blinks_left == 0:
     return 1
-  elif (stone, blinks_left) in cache:
-    return cache[(stone, blinks_left)]
   
   if stone == 0:
     result = blink_at_stone(1, blinks_left - 1)
@@ -18,8 +15,6 @@ def blink_at_stone(stone: int, blinks_left: int) -> int:
     result = blink_at_stone(left, blinks_left - 1) + blink_at_stone(right, blinks_left - 1)
   else:
     result = blink_at_stone(stone * 2024, blinks_left - 1)
-
-  cache[(stone,blinks_left)] = result
 
   return result
 
