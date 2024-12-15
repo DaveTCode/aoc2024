@@ -50,8 +50,8 @@ def run_v2(input_file: str, width: int, height: int, seconds: int):
       else:
         m[robot.y][robot.x] = "1"
 
-    if overlap_count == 0:
-      print("___", i, "____", "\n", "\n".join(["".join(row) for row in m]), "\n\n")
+    #if overlap_count == 0:
+    print("___", i, "____", "\n", "\n".join(["".join(row) for row in m]), "\n\n")
 
 
   q = safety_score(robots, width, height)
@@ -60,4 +60,4 @@ def run_v2(input_file: str, width: int, height: int, seconds: int):
 
 if __name__ == "__main__":
   #run_v2("test/day14", 11, 7, 100)
-  run_v2("inputs/day14", 101, 103, 10000)
+  run_v2("inputs/day14", 101, 103, 7700)
